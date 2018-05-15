@@ -68,24 +68,24 @@ def getMeansAndSDs(population, sample, verbose = False):
 def sem(popSD, sampleSize):
     return popSD/sampleSize**0.5
     
-#sampleSizes = (25, 50, 100, 200, 300, 400, 500, 600)
-#numTrials = 50
-#population = getHighs()
-#popSD = numpy.std(population)
-#sems = []
-#sampleSDs = []
-#for size in sampleSizes:
-#    sems.append(sem(popSD, size))
-#    means = []
-#    for t in range(numTrials):
-#        sample = random.sample(population, size)
-#        means.append(sum(sample)/len(sample))
-#    sampleSDs.append(numpy.std(means))
-#pylab.plot(sampleSizes, sampleSDs,
-#           label = 'Std of 50 means')
-#pylab.plot(sampleSizes, sems, 'r--', label = 'SEM')
-#pylab.title('SEM vs. SD for 50 Means')
-#pylab.legend()
+sampleSizes = (25, 50, 100, 200, 300, 400, 500, 600)
+numTrials = 50
+population = getHighs()
+popSD = numpy.std(population)
+sems = []
+sampleSDs = []
+for size in sampleSizes:
+   sems.append(sem(popSD, size))
+   means = []
+   for t in range(numTrials):
+       sample = random.sample(population, size)
+       means.append(sum(sample)/len(sample))
+   sampleSDs.append(numpy.std(means))
+pylab.plot(sampleSizes, sampleSDs,
+          label = 'Std of 50 means')
+pylab.plot(sampleSizes, sems, 'r--', label = 'SEM')
+pylab.title('SEM vs. SD for 50 Means')
+pylab.legend()
            
 def getDiffs(population, sampleSizes):
     popStd = numpy.std(population)

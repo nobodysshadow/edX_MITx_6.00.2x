@@ -117,6 +117,6 @@ def showErrorBars(population, sizes, numTrials):
     pylab.legend()
     pylab.figure()
 
-#population = getHighs()   
-#showErrorBars(population, (50, 100, 200, 300, 400, 500, 600), 50)
+population = getHighs()   
+showErrorBars(population, (50, 100, 200, 300, 400, 500, 600), 50)
  
